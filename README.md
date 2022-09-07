@@ -1,4 +1,4 @@
-# Quasar App (hasan2)
+# Quasar App (GitHomePage)
 
 A Quasar Framework app
 
