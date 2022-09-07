@@ -1,8 +1,18 @@
 const routes = [
   {
     path: "/",
+    redirect: '/about',
     component: () => import("layouts/MainLayout.vue"),
-    children: [{ path: "", component: () => import("pages/Index.vue") }],
+    children: [
+      {
+        path: "about",
+        component: () => import("pages/Index.vue")
+      },
+      {
+        path: "education",
+        component: () => import("pages/education")
+      }
+    ],
   },
 
   // Always leave this as last one,

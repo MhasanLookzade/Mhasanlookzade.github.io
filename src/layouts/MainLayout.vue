@@ -1,32 +1,53 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
+    <q-header class="homePage" elevated>
+
+      <div class="row headerPhotoContainer">
+        <div class="col-2 headerPhoto">
+          <img
+            alt="HasanLogo"
+            src="~assets/hajHasan.svg"
+            style="width: 100px; height: 100px;border-radius: 50%"
+          />
+          <q-btn icon="sun"></q-btn>
+
+
+        </div>
+      </div>
+
+      <q-tabs
+        align="center"
+        class="options"
+        :breakpoint="0"
+        v-model="tab"
+        inline-label
+      >
+        <q-route-tab
+          label="About"
+          name="about"
+          icon="person"
+          to="/about"
+          exact
+        >
+          <q-tooltip class="bg-orange text-body3" :offset="[0, 5]">
+            About
+          </q-tooltip>
+        </q-route-tab>
+        <q-route-tab
+          name="mail"
+          icon="mail"
+          to="/education"
+          exact
         />
+        <q-route-tab
+          icon="alarm"
+          to="/alarms"
+          exact
+        />
+      </q-tabs>
 
-        <q-toolbar-title>Hasan Lookzadeh </q-toolbar-title>
-
-      </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
-      <q-list>
-        <q-item-label header> Essential Links </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
 
     <q-page-container>
       <router-view />
@@ -35,52 +56,7 @@
 </template>
 
 <script>
-import EssentialLink from "components/EssentialLink.vue";
 
-const linksList = [
-  {
-    title: "Docs",
-    caption: "quasar.dev",
-    icon: "school",
-    link: "https://quasar.dev",
-  },
-  {
-    title: "Github",
-    caption: "github.com/quasarframework",
-    icon: "code",
-    link: "https://github.com/quasarframework",
-  },
-  {
-    title: "Discord Chat Channel",
-    caption: "chat.quasar.dev",
-    icon: "chat",
-    link: "https://chat.quasar.dev",
-  },
-  {
-    title: "Forum",
-    caption: "forum.quasar.dev",
-    icon: "record_voice_over",
-    link: "https://forum.quasar.dev",
-  },
-  {
-    title: "Twitter",
-    caption: "@quasarframework",
-    icon: "rss_feed",
-    link: "https://twitter.quasar.dev",
-  },
-  {
-    title: "Facebook",
-    caption: "@QuasarFramework",
-    icon: "public",
-    link: "https://facebook.quasar.dev",
-  },
-  {
-    title: "Quasar Awesome",
-    caption: "Community Quasar projects",
-    icon: "favorite",
-    link: "https://awesome.quasar.dev",
-  },
-];
 
 import { defineComponent, ref } from "vue";
 
@@ -88,14 +64,14 @@ export default defineComponent({
   name: "MainLayout",
 
   components: {
-    EssentialLink,
   },
 
   setup() {
     const leftDrawerOpen = ref(false);
+    const tab = ref('about');
 
     return {
-      essentialLinks: linksList,
+      tab,
       leftDrawerOpen,
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
@@ -104,3 +80,27 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="scss">
+.homePage{
+  height: 150px;
+  color: orange;
+  background-color: #9c27b0;
+  .headerPhotoContainer{
+    justify-content: end;
+    .headerPhoto{
+      display: flex;
+      justify-content: end;
+    }
+
+  }
+  .options{
+    position: absolute;
+    bottom: 0;
+    .q-tabs__content{
+      justify-content: start;
+    }
+  }
+}
+
+</style>
