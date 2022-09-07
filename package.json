@@ -4,7 +4,7 @@
   "description": "A Quasar Framework app",
   "productName": "Hasan Lookzadeh",
   "author": "hasan <hassan.lookzade@gmail.com>",
-  "private": true,
+  "private": false,
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",
     "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .gitignore",
