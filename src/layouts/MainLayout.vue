@@ -1,22 +1,9 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header class="homePage" elevated>
+    <q-header class="headerLayout" elevated>
 
-      <div class="row headerPhotoContainer">
-        <div class="col-2 headerPhoto">
-          <img
-            alt="HasanLogo"
-            src="~assets/hajHasan.svg"
-            style="width: 100px; height: 100px;border-radius: 50%"
-          />
-          <q-btn icon="sun"></q-btn>
-
-
-        </div>
-      </div>
-
+    <div >
       <q-tabs
-        align="center"
         class="options"
         :breakpoint="0"
         v-model="tab"
@@ -33,23 +20,27 @@
             About
           </q-tooltip>
         </q-route-tab>
+
         <q-route-tab
           name="mail"
-          icon="mail"
+          label="Education"
+          icon="school"
           to="/education"
           exact
         />
         <q-route-tab
-          icon="alarm"
-          to="/alarms"
+          icon="thumb_up"
+          to="/Experience"
+          label="Experience"
           exact
         />
       </q-tabs>
+    </div>
 
     </q-header>
 
 
-    <q-page-container>
+    <q-page-container class="homePage">
       <router-view />
     </q-page-container>
   </q-layout>
@@ -82,25 +73,17 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.homePage{
-  height: 150px;
+.headerLayout{
   color: orange;
   background-color: #9c27b0;
-  .headerPhotoContainer{
-    justify-content: end;
-    .headerPhoto{
-      display: flex;
-      justify-content: end;
-    }
-
-  }
-  .options{
-    position: absolute;
-    bottom: 0;
-    .q-tabs__content{
-      justify-content: start;
-    }
-  }
 }
-
+.homePage{
+  height: 100vh;
+  background-image: url("https://www.stockvault.net/data/2020/09/28/279232/preview16.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
 </style>
