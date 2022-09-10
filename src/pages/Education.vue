@@ -15,14 +15,14 @@
             swipeable
             navigation
             animated
-            v-model="slide"
+            v-model="education.model"
             infinite
             class="eduCarousel rounded-borders"
           >
             <q-carousel-slide
               v-for="(src,index) in education.imageSrcs"
               :key="index"
-              :name="index" >
+              :name="index">
               <q-img
                 class="bg-white rounded-borders"
                 height="300px"
@@ -32,9 +32,9 @@
             </q-carousel-slide>
           </q-carousel>
 
-          <q-card-section >
-            <div class="text-h5 educationInfo"  >
-              <q-img height="40px" width="40px" fit="fill" :src="education.svg" :alt="education.name" />
+          <q-card-section>
+            <div class="text-h5 educationInfo">
+              <q-img height="40px" width="40px" fit="fill" :src="education.svg" :alt="education.name"/>
               <a class="subjectLink" :href="education.url" target="_blank"> {{ education.name }} </a>
             </div>
             <div class="text-h6 ">{{ education.degree }}</div>
@@ -49,55 +49,61 @@
 <script>
 export default {
   name: "Education",
-  data(){
-    return{
-      slide:0,
-      educations :[
+  data() {
+    return {
+      slide: 0,
+      educations: [
         {
+          model: 0,
           name: 'Kharazmi University',
-          url:'https://khu.ac.ir/en/',
-          imageSrcs:[
+          url: 'https://khu.ac.ir/en/',
+          period: '2018 - 2023',
+          svg: require('src/assets/Kharazmy_University_logo.svg'),
+          degree: 'Bachelor of Technology in Computer Science',
+          imageSrcs: [
             'https://upload.wikimedia.org/wikipedia/en/0/01/Kharazmy_University_logo.svg',
             'https://cdn.quasar.dev/img/mountains.jpg',
             require('src/assets/Kharazmy_University_logo.svg'),
           ],
-          period: '2018 - 2023',
-          svg: require('src/assets/Kharazmy_University_logo.svg'),
-          degree:'Bachelor of Technology in Computer Science'
         },
         {
-          name:'Mofid High School',
+          model: 0,
+          name: 'Mofid High School',
           url: 'https://mofidsch.ir/',
-          imageSrcs:[
+          period: '2014 - 2018',
+          svg: require('src/assets/Mofid_School_logo.png'),
+          degree: 'Diploma of Education , Mathematics',
+          imageSrcs: [
             require('src/assets/Mofid_School_logo.png'),
             'https://cdn.quasar.dev/img/mountains.jpg',
             require('src/assets/Kharazmy_University_logo.svg'),
           ],
-          period:'2014 - 2018',
-          svg: require('src/assets/Mofid_School_logo.png'),
-          degree:'Diploma of Education , Mathematics'
+
         },
       ]
     }
   },
-  methods:{
-  }
+  methods: {}
 }
 </script>
 
 <style lang="scss" scoped>
-.example-item{
+.example-item {
   height: 290px;
   width: 500px;
-  .educationCard{
+
+  .educationCard {
     background-color: #ffd68c;
-    ::v-deep(.educationInfo){
+
+    ::v-deep(.educationInfo) {
       display: flex;
-      .subjectLink{
+
+      .subjectLink {
         padding-left: 4px;
       }
     }
-    .eduCarousel{
+
+    .eduCarousel {
       background-color: #ffa549;
     }
   }
