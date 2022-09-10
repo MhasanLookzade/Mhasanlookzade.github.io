@@ -73,7 +73,7 @@
             </q-route-tab>
 
             <q-route-tab
-              name="mail"
+              name="education"
               label="Education"
               icon="school"
               to="/education"
@@ -123,10 +123,6 @@ export default defineComponent({
         cv: '',
       },
       tab,
-      leftDrawerOpen,
-      toggleLeftDrawer() {
-        leftDrawerOpen.value = !leftDrawerOpen.value;
-      },
     };
   },
   methods: {

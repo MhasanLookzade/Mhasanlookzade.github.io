@@ -10,7 +10,7 @@ const routes = [
       },
       {
         path: "education",
-        component: () => import("pages/education")
+        component: () => import("pages/Education")
       }
     ],
   },
