@@ -33,8 +33,10 @@
         </div>
       </div>
     </div>
-    <div class="col-2">
-      <img
+    <div class="col-2 image">
+      <q-img
+        loading="eager"
+        spinner-color="midnightblue"
         alt="HasanLogo"
         src="~assets/hajHasan.svg"
         style="width: 300px; height: 300px;border-radius: 50%"

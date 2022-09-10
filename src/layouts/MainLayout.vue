@@ -53,7 +53,7 @@
 
 
         </div>
-        <div class="col-5 tabs">
+        <div class="col-4  tabs">
           <q-tabs
             class="options"
             :breakpoint="0"
@@ -159,12 +159,12 @@ export default defineComponent({
   }
 
   color: orange;
-  background-color: #9c27b0;
+  background-color: #b249c4;
 }
 
 .homePage {
   height: 100vh;
-  background-image: url("https://64.media.tumblr.com/b5e710d574fc944f4217c19fa39ea466/tumblr_p0n1uxwyAc1uzwgsuo1_400.gifv");
+  background-image: url("https://wallpapercave.com/uwp/uwp1314748.gif");
   background-repeat: no-repeat;
   background-position: center top;
   background-attachment: fixed;
