@@ -80,7 +80,7 @@
               exact
             />
             <q-route-tab
-              icon="thumb_up"
+              icon="fas fa-scroll"
               to="/Experience"
               label="Experience"
               exact

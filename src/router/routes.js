@@ -11,6 +11,10 @@ const routes = [
       {
         path: "education",
         component: () => import("pages/Education")
+      },
+      {
+        path: "experience",
+        component: () => import("pages/Experience")
       }
     ],
   },
