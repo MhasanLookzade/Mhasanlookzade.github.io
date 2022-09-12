@@ -51,9 +51,8 @@
             </template>
           </q-icon>
 
-
         </div>
-        <div class="col-4  tabs">
+        <div class="col-8  tabs">
           <q-tabs
             class="options"
             :breakpoint="0"
@@ -79,10 +78,32 @@
               to="/education"
               exact
             />
+
             <q-route-tab
               icon="fas fa-scroll"
               to="/Experience"
               label="Experience"
+              exact
+            />
+
+            <q-route-tab
+              icon="fas fa-spinner "
+              to="/skills"
+              label="Skills"
+              exact
+            />
+
+            <q-route-tab
+              icon="add_to_queue"
+              to="/courses"
+              label="courses"
+              exact
+            />
+
+            <q-route-tab
+              icon="mail"
+              to="contact_me"
+              label="Contact Me"
               exact
             />
           </q-tabs>
@@ -120,6 +141,7 @@ export default defineComponent({
         linkedin: 'fab fa-linkedin-in',
         instagram: 'fab fa-instagram',
         github: 'fab fa-github',
+        gmail: 'fab fa-google',
         cv: '',
       },
       tab,
@@ -150,7 +172,7 @@ export default defineComponent({
     .tabs{
       display: flex;
       align-items: flex-end;
-      justify-content: center;
+      justify-content: flex-end;
     }
   }
 
@@ -166,5 +188,5 @@ export default defineComponent({
   background-attachment: fixed;
   -webkit-background-size: cover;
   background-size: cover;
-}
+  }
 </style>
