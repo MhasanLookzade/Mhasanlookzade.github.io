@@ -116,8 +116,8 @@
     </q-header>
 
 
-    <q-page-container class="homePage">
-      <router-view/>
+    <q-page-container class="homePageContainer">
+        <router-view/>
     </q-page-container>
   </q-layout>
 </template>
@@ -175,12 +175,11 @@ export default defineComponent({
       justify-content: flex-end;
     }
   }
-
   color: orange;
   background-color: #b249c4;
 }
 
-.homePage {
+.homePageContainer {
   height: 100vh;
   background-image: url("https://wallpapercave.com/uwp/uwp1314748.gif");
   background-repeat: no-repeat;
@@ -188,5 +187,7 @@ export default defineComponent({
   background-attachment: fixed;
   -webkit-background-size: cover;
   background-size: cover;
+  overflow: auto;
+
   }
 </style>
