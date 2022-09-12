@@ -7,8 +7,8 @@
       <q-card
       class="course transparent" >
         <h3 class="justify-center flex">
-          <q-avatar >
-          <img :src="subject.icon" alt="kharazmiIcon" class="bg-amber-10"></q-avatar>
+          <q-avatar  class="q-mr-sm">
+          <img :src="subject.icon" alt="kharazmiIcon" class="bg-amber-2"></q-avatar>
           {{ subject.name }}
         </h3>
         <div class="row courseChipContainer">
@@ -80,6 +80,7 @@ export default {
         },
         {
           name: 'Udemy',
+          icon: require('src/assets/udemy_logo_icon.svg'),
           lessons: [
             {
               name: 'Udemy - Modern HTML CSS From The Beginning (Including Sass) 2020-4',
