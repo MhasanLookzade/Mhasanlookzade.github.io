@@ -10,11 +10,23 @@ const routes = [
       },
       {
         path: "education",
-        component: () => import("pages/Education")
+        component: () => import("pages/Education.vue")
       },
       {
         path: "experience",
-        component: () => import("pages/Experience")
+        component: () => import("pages/Experience.vue")
+      },
+      {
+        path: "skills",
+        component: () => import("pages/Skills.vue")
+      },
+      {
+        path: "courses",
+        component: () => import("pages/Courses.vue")
+      },
+      {
+        path: "contact_me",
+        component: () => import("pages/Contact.vue")
       }
     ],
   },
