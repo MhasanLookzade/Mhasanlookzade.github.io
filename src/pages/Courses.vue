@@ -5,14 +5,14 @@
          v-for="(subject,index) in courses"
          :key="index">
       <q-card
-      class="course transparent" >
-        <h3 class="justify-center flex">
+      class="course bg-amber-8" >
+        <h3 class="justify-center flex q-my-none q-pb-lg">
           <q-avatar  class="q-mr-sm">
           <img :src="subject.icon" alt="kharazmiIcon" class="bg-amber-2"></q-avatar>
           {{ subject.name }}
         </h3>
         <div class="row courseChipContainer">
-          <div class="col-10 courseChip">
+          <div class="col-11 courseChip transparent">
             <q-chip
               class="Kharazmi flex-center"
               v-for="(course,index) in subject.lessons"
@@ -117,7 +117,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 150px;
   .course{
+    padding: 24px;
     .courseChipContainer{
       justify-content: center;
       align-items: center;
