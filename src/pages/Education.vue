@@ -7,7 +7,7 @@
         :key="index"
         class="example-item"
       >
-        <q-card class="educationCard q-ma-sm">
+        <q-card class="educationCard  q-ma-sm">
           <q-carousel
             arrows
             control-color="purple-4"
@@ -17,7 +17,7 @@
             animated
             v-model="education.model"
             infinite
-            class="eduCarousel rounded-borders"
+            class="eduCarousel bg-amber-8 rounded-borders"
           >
             <q-carousel-slide
               v-for="(src,index) in education.imageSrcs"
@@ -61,9 +61,10 @@ export default {
           svg: require('src/assets/Kharazmy_University_logo.svg'),
           degree: 'Bachelor of Technology in Computer Science',
           imageSrcs: [
-            'https://upload.wikimedia.org/wikipedia/en/0/01/Kharazmy_University_logo.svg',
-            'https://cdn.quasar.dev/img/mountains.jpg',
-            require('src/assets/Kharazmy_University_logo.svg'),
+            'https://msc.khu.ac.ir/files/site55/yekta_program/albums/alb_65_c2e9f6d/129.jpg',
+            'https://khu.ac.ir/documents/8517113/0/IMG_1848.png',
+            'https://upload.wikimedia.org/wikipedia/commons/f/f6/Kharazmi_University_of_Karaj_02.jpg',
+
           ],
         },
         {
@@ -74,9 +75,9 @@ export default {
           svg: require('src/assets/Mofid_School_logo.png'),
           degree: 'Diploma of Education , Mathematics',
           imageSrcs: [
-            require('src/assets/Mofid_School_logo.png'),
-            'https://cdn.quasar.dev/img/mountains.jpg',
-            require('src/assets/Kharazmy_University_logo.svg'),
+            'http://maktab-charity.org/wp-content/uploads/2018/02/mofidschool.jpg',
+            'https://static.neshanmap.ir/places/images/491/335093_806717_Thumbnail--%D8%AF%D8%A8%DB%8C%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D9%81%DB%8C%D8%AF.jpeg',
+            'http://mofidsch.ir/h2/wp-content/uploads/2020/05/f1-2.jpg',
           ],
 
         },
@@ -104,7 +105,7 @@ export default {
     }
 
     .eduCarousel {
-      background-color: #ffa549;
+      //background-color: #ffa549;
     }
   }
 }
