@@ -65,11 +65,7 @@
               icon="person"
               to="/about"
               exact
-            >
-              <q-tooltip class="bg-orange text-body3" :offset="[0, 5]">
-                About
-              </q-tooltip>
-            </q-route-tab>
+            />
 
             <q-route-tab
               name="education"
@@ -112,12 +108,11 @@
       </div>
 
 
-
     </q-header>
 
 
     <q-page-container class="homePageContainer">
-        <router-view/>
+      <router-view/>
     </q-page-container>
   </q-layout>
 </template>
@@ -157,8 +152,9 @@ export default defineComponent({
 
 <style lang="scss">
 .headerLayout {
-  .header{
+  .header {
     height: 88px;
+
     .links {
       display: flex;
       justify-content: center;
@@ -169,12 +165,14 @@ export default defineComponent({
         cursor: pointer;
       }
     }
-    .tabs{
+
+    .tabs {
       display: flex;
       align-items: flex-end;
       justify-content: flex-end;
     }
   }
+
   color: orange;
   background-color: #b249c4;
 }
@@ -189,5 +187,5 @@ export default defineComponent({
   background-size: cover;
   overflow: auto;
 
-  }
+}
 </style>
