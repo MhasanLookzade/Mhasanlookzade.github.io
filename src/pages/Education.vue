@@ -38,6 +38,7 @@
               <a class="subjectLink" :href="education.url" target="_blank"> {{ education.name }} </a>
             </div>
             <div class="text-h6 ">{{ education.degree }}</div>
+            <div class="text-h7 text-bold ">GPA: {{ education.gpa }}</div>
             <div class="text-subtitle2">{{ education.period }}</div>
           </q-card-section>
         </q-card>
@@ -60,6 +61,7 @@ export default {
           period: '2018 - 2023',
           svg: require('src/assets/Kharazmy_University_logo.svg'),
           degree: 'Bachelor of Technology in Computer Science',
+          gpa:'3.16',
           imageSrcs: [
             'https://msc.khu.ac.ir/files/site55/yekta_program/albums/alb_65_c2e9f6d/129.jpg',
             'https://khu.ac.ir/documents/8517113/0/IMG_1848.png',
@@ -74,6 +76,7 @@ export default {
           period: '2014 - 2018',
           svg: require('src/assets/Mofid_School_logo.png'),
           degree: 'Diploma of Education , Mathematics',
+          gpa:'3.76',
           imageSrcs: [
             'http://maktab-charity.org/wp-content/uploads/2018/02/mofidschool.jpg',
             'https://static.neshanmap.ir/places/images/491/335093_806717_Thumbnail--%D8%AF%D8%A8%DB%8C%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D9%81%DB%8C%D8%AF.jpeg',
