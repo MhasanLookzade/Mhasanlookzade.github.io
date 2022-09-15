@@ -57,23 +57,24 @@ export default {
           show:false
         },
         {
-          name:'Micro-service Systems',
-          Included:['Docker', 'Git'],
+          name:'Web Frameworks',
+          Included:['Vue.Js','Quasar','Nuxt.js','Vuetify', 'Bootstrap'],
           show:false
         },
         {
-          name:'Web Frameworks',
-          Included:['Vue.Js', 'Bootstrap'],
+          name:'Network',
+          Included:['Restfull API','Http'],
+          show:false
+        },
+
+        {
+          name:'Version Control System',
+          Included:[ 'Git'],
           show:false
         },
         {
           name:'Operating Systems',
           Included:['Linux(Ubuntu)','Windows'],
-          show:false
-        },
-        {
-          name:'Multi-paradigm programming language',
-          Included:['Matlab' ,'Maples'],
           show:false
         },
         {
