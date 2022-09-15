@@ -42,7 +42,7 @@ export default {
       courses: [
         {
           name: 'Kharazmi University',
-          icon: require('src/assets/Kharazmy_University_logo.svg'),
+          icon: require('assets/Kharazmi/Kharazmy_University_logo.svg'),
           lessons: [
             {
               name: 'Computational Intelligence',
@@ -80,7 +80,7 @@ export default {
         },
         {
           name: 'Udemy',
-          icon: require('src/assets/udemy_logo_icon.svg'),
+          icon: require('assets/Udemy/udemy_logo_icon.svg'),
           lessons: [
             {
               name: 'Udemy - Modern HTML CSS From The Beginning (Including Sass) 2020-4',
