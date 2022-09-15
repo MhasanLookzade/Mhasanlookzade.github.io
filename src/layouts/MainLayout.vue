@@ -34,7 +34,7 @@
           <q-icon
             class="link"
             size="40px"
-            @click="goToUrl('cv/cv.pdf')">
+            @click="goToUrl('cv/Cv.pdf')">
             <template v-slot:default>
               <q-tooltip class="bg-orange text-body2" :offset="[10, 10]">
                 Resume
