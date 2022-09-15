@@ -26,7 +26,15 @@
         <q-card-section>
           <div class="googleMapContainer"
           >
+
+            <q-inner-loading
+              :showing="visible"
+              label="Please wait..."
+              label-class="text-teal"
+              label-style="font-size: 1.1em"
+            />
             <iframe
+              @load="showMapLoading"
               class="google"
               src="https://maps.google.com/maps?q=tehran&t=&z=13&ie=UTF8&iwloc=&output=embed"
               frameborder="0"
@@ -42,7 +50,17 @@
 
 <script>
 export default {
-  name: "Contact"
+  name: "Contact",
+  data(){
+    return{
+      visible:true,
+    }
+  },
+  methods:{
+    showMapLoading () {
+      this.visible = false
+    }
+  }
 }
 </script>
 
