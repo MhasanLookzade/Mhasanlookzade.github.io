@@ -119,6 +119,7 @@ export default {
   align-items: center;
   margin-top: 150px;
   .course{
+    border-radius: 40px;
     padding: 24px;
     .courseChipContainer{
       justify-content: center;
