@@ -28,6 +28,7 @@
           >
 
             <q-inner-loading
+              style="border-radius: 45px"
               :showing="visible"
               label="Please wait..."
               label-class="text-teal"
