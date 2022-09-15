@@ -38,7 +38,7 @@
         loading="eager"
         spinner-color="midnightblue"
         alt="HasanLogo"
-        src="~assets/hajHasan.svg"
+        src="~assets/hajHasan.png"
         style="width: 300px; height: 300px;border-radius: 50%"
       />
 
