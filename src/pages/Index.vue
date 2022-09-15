@@ -8,7 +8,7 @@
           Talented and experienced front-end developer executing with a A wealth of diverse skills.
           Experience has taught me to take accessibility and
           responsiveness seriously, and I am excited to continue my career
-          at Thrive Web Designs with a focus on making sites with Vue.js </h6>
+          at Thrive Web Designs with a focus on making sites with Vue.js (Quasar Framework) </h6>
         <div class="chips">
           <q-icon
             size="40px"
@@ -17,11 +17,11 @@
           <q-chip
             color="orange"
             text-color="purple"
-            label="#motivated"></q-chip>
+            label="#Concentrated"></q-chip>
           <q-chip
             color="orange"
             text-color="purple"
-            label="#focusable"></q-chip>
+            label="#motivated"></q-chip>
           <q-chip
             color="orange"
             text-color="purple"
