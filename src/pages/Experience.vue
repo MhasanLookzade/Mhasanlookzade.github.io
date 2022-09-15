@@ -2,7 +2,7 @@
   <div class="exp">
     <div class="row experienceContainer">
       <div class="col-5  experience ">
-        <p class="justify-center flex text-purple-1 text-bold">Working Experience :</p>
+        <p class="justify-center flex text-bold text-purple-8" >Working Experience :</p>
         <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12  flex ">
           <q-card class="experienceCard bg-amber-8" flat bordered>
             <q-card-section>
@@ -10,7 +10,7 @@
                 <div class="col-lg-7 col-md-6 col-xs-12 col-sm-12">
                   <q-card-section class="q-py-xs text-bold">
                     <div class="text-h5 q-mt-sm q-mb-xs">
-                      <a class="project_link text-orange-1 text-bold" style="text-decoration: none;color: #eb4f4f;">
+                      <a class="project_link text-orange-1 text-bold" style="text-decoration: none;">
                         Junior Front-End at <a href="https://alaatv.com" target="_blank" class="text-purple-8">AlaaTV</a></a>
                       <p class="text-subtitle2 text-purple-8">2021 - 2022</p>
                     </div>
