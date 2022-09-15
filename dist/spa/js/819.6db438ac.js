@@ -1,1 +1,0 @@
-"use strict";(globalThis["webpackChunkGitHomePage"]=globalThis["webpackChunkGitHomePage"]||[]).push([[819],{4819:(a,e,n)=>{n.r(e),n.d(e,{default:()=>o});var t=n(3673);function u(a,e,n,u,s,i){return(0,t.wg)(),(0,t.iD)("h1",null,"salam man edu hastam")}const s={name:"education"};var i=n(4260);const l=(0,i.Z)(s,[["render",u]]),o=l}}]);
