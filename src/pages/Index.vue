@@ -3,7 +3,7 @@
     <div class="col-7 ">
       <div class="row about">
         <h2 class="fullName">Mohammad Hasan <span class="lastname" >Lookzadeh</span></h2>
-        <h3 class="title">Front End Developer</h3>
+        <h3 class="title">Maybe FullStack Developer</h3>
         <h6 class="summary">
           Talented and experienced front-end developer executing with a A wealth of diverse skills.
           Experience has taught me to take accessibility and
