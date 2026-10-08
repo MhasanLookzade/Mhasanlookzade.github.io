@@ -9,6 +9,7 @@ export const educationData = [
     url: "https://sbu.ac.ir/en",
     svg: require("assets/Beheshti/sbu_logo.svg"),
     imageSrcs: [
+      require("assets/Beheshti/sbu_entrance.jpg"),
       require("assets/Beheshti/sbu_faculty.jpg"),
       require("assets/Beheshti/sbu_campus.jpg"),
     ],

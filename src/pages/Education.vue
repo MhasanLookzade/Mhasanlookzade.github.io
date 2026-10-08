@@ -111,7 +111,7 @@
           </div>
         </div>
 
-        <!-- Campus Photos Showcase -->
+        <!-- Campus Photos Showcase with Aspect-Ratio Preserved Display -->
         <div
           v-if="edu.imageSrcs && edu.imageSrcs.length"
           class="campus-gallery-container q-mt-lg"
@@ -142,8 +142,21 @@
               v-for="(src, imgIdx) in edu.imageSrcs"
               :key="imgIdx"
               :name="imgIdx"
-              :img-src="src"
-            />
+              class="campus-slide-box no-padding flex flex-center"
+            >
+              <!-- Ambient Blurred Backdrop -->
+              <div
+                class="slide-blur-bg"
+                :style="{ backgroundImage: `url(${src})` }"
+              ></div>
+              <!-- Crisp Foreground Photo -->
+              <img
+                :src="src"
+                class="slide-photo-img"
+                :alt="edu.institution + ' Photo ' + (imgIdx + 1)"
+                loading="lazy"
+              />
+            </q-carousel-slide>
           </q-carousel>
         </div>
 
@@ -208,14 +221,14 @@ const educations = ref(
     width: 58px;
     height: 58px;
     border-radius: 14px;
-    background: rgba(15, 23, 42, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(20, 186, 237, 0.25);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     padding: 8px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 12px rgba(20, 186, 237, 0.1);
 
     .edu-logo-img {
       max-width: 100%;
@@ -331,7 +344,7 @@ const educations = ref(
   }
 
   .campus-gallery-container {
-    background: rgba(10, 15, 29, 0.65);
+    background: rgba(10, 15, 29, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 18px;
     padding: 12px;
@@ -359,30 +372,61 @@ const educations = ref(
     }
 
     .campus-carousel {
-      height: 380px;
+      height: 440px;
       border-radius: 14px;
       overflow: hidden;
-      background: #090d16;
+      position: relative;
+      background: #060913;
 
-      @media (max-width: 600px) {
+      @media (max-width: 768px) {
+        height: 320px;
+      }
+      @media (max-width: 480px) {
         height: 240px;
       }
 
-      :deep(.q-carousel__slide) {
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
+      .campus-slide-box {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .slide-blur-bg {
+          position: absolute;
+          inset: -25px;
+          background-size: cover;
+          background-position: center;
+          filter: blur(28px) brightness(0.28) saturate(1.4);
+          transform: scale(1.15);
+          pointer-events: none;
+        }
+
+        .slide-photo-img {
+          position: relative;
+          z-index: 2;
+          max-width: 96%;
+          max-height: 94%;
+          width: auto;
+          height: auto;
+          object-fit: contain;
+          border-radius: 10px;
+          box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+        }
       }
 
       :deep(.q-carousel__arrow .q-btn) {
-        background: rgba(15, 23, 42, 0.75);
+        background: rgba(15, 23, 42, 0.8);
         backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.15);
         color: #ffffff;
         transition: all 0.2s ease;
+        z-index: 10;
 
         &:hover {
-          background: rgba(99, 102, 241, 0.85);
+          background: rgba(99, 102, 241, 0.9);
           border-color: rgba(99, 102, 241, 0.6);
         }
       }
@@ -390,6 +434,7 @@ const educations = ref(
       :deep(.q-carousel__navigation-inner .q-btn) {
         opacity: 0.5;
         transition: opacity 0.2s ease;
+        z-index: 10;
 
         &.q-btn--active {
           opacity: 1;
