@@ -1,36 +1,52 @@
+# OS & System files
 .DS_Store
-.vscode
-.editorconfig
-
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+thumbs.db
 .thumbs.db
-node_modules
+desktop.ini
 
-# Quasar core related directories
-.quasar
+# Environment variables & secrets
+.env
+.env.local
+.env.*.local
+*.local
 
-
-# Cordova related directories and files
-/src-cordova/node_modules
-/src-cordova/platforms
-/src-cordova/plugins
-/src-cordova/www
-
-# Capacitor related directories and files
-/src-capacitor/www
-/src-capacitor/node_modules
-
-# BEX related directories and files
-/src-bex/www
-/src-bex/js/core
-
-# Log files
+# Node & Package Managers
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Editor directories and files
-.idea
+# Quasar & Build caches
+.quasar/
+.cache/
+.eslintcache
+.prettiercache
+
+# Editor & IDE directories
+.idea/
+.vscode/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
+*.sw?
+*.sublime-project
+*.sublime-workspace
+
+# Cordova / Capacitor / BEX (if used)
+/src-cordova/node_modules
+/src-cordova/platforms
+/src-cordova/plugins
+/src-cordova/www
+/src-capacitor/www
+/src-capacitor/node_modules
+/src-bex/www
+/src-bex/js/core
