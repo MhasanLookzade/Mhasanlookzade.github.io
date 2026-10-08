@@ -21,11 +21,16 @@
 
     <!-- Section 1: Online Certifications -->
     <div class="section-container q-mb-xl">
-      <div class="section-title-row q-mb-lg flex items-center gap-sm">
-        <q-icon name="fas fa-cloud" size="20px" class="text-blue-4" />
-        <h3 class="text-h5 text-white text-weight-bold q-my-none">
-          Professional Online Certifications
-        </h3>
+      <div class="section-title-row">
+        <div class="section-icon-box box-blue">
+          <q-icon name="fas fa-cloud" size="18px" />
+        </div>
+        <div>
+          <h3 class="section-title">Professional Online Certifications</h3>
+          <div class="section-subtitle text-caption text-grey-5">
+            Cloud architecture, DevOps pipelines, containerization & modern web
+          </div>
+        </div>
       </div>
 
       <div class="row q-col-gutter-lg">
@@ -68,11 +73,16 @@
 
     <!-- Section 2: Language Proficiency -->
     <div class="section-container q-mb-xl">
-      <div class="section-title-row q-mb-lg flex items-center gap-sm">
-        <q-icon name="fas fa-language" size="22px" class="text-cyan-4" />
-        <h3 class="text-h5 text-white text-weight-bold q-my-none">
-          Language Skills
-        </h3>
+      <div class="section-title-row">
+        <div class="section-icon-box box-cyan">
+          <q-icon name="fas fa-language" size="20px" />
+        </div>
+        <div>
+          <h3 class="section-title">Language Proficiency</h3>
+          <div class="section-subtitle text-caption text-grey-5">
+            Global academic communication credentials & native proficiency
+          </div>
+        </div>
       </div>
 
       <div class="row q-col-gutter-lg">
@@ -81,8 +91,8 @@
           <div class="glass-panel language-card q-pa-xl">
             <div class="row items-center justify-between q-mb-md">
               <div class="row items-center gap-sm">
-                <q-avatar size="36px" class="lang-avatar">
-                  <q-icon name="fas fa-globe" size="18px" class="text-cyan-4" />
+                <q-avatar size="40px" class="lang-avatar">
+                  <q-icon name="fas fa-globe" size="20px" class="text-cyan-4" />
                 </q-avatar>
                 <div>
                   <h4 class="lang-name q-my-none">English</h4>
@@ -120,10 +130,10 @@
             class="glass-panel language-card q-pa-xl h-100 flex column justify-between"
           >
             <div class="row items-center gap-sm">
-              <q-avatar size="36px" class="lang-avatar">
+              <q-avatar size="40px" class="lang-avatar">
                 <q-icon
                   name="fas fa-comment-dots"
-                  size="18px"
+                  size="20px"
                   class="text-emerald-4"
                 />
               </q-avatar>
@@ -242,8 +252,8 @@ import { coursesData as courses } from "src/data/courses";
   border-radius: 20px;
 
   .lang-avatar {
-    background: rgba(15, 23, 42, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   .lang-name {

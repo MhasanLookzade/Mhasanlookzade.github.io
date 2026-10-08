@@ -26,19 +26,25 @@
         :key="index"
         class="glass-panel education-card q-pa-xl q-mb-xl"
       >
-        <div class="row items-start justify-between q-col-gutter-md q-mb-md">
-          <div class="row items-center gap-md">
-            <q-avatar size="50px" class="edu-avatar" rounded>
-              <img v-if="edu.svg" :src="edu.svg" :alt="edu.institution" />
+        <!-- Modernized Card Header -->
+        <div class="edu-card-header">
+          <div class="edu-identity">
+            <div class="edu-logo-box">
+              <img
+                v-if="edu.svg"
+                :src="edu.svg"
+                :alt="edu.institution"
+                class="edu-logo-img"
+              />
               <q-icon
                 v-else
                 name="fas fa-university"
                 size="24px"
                 class="text-indigo-4"
               />
-            </q-avatar>
-            <div>
-              <div class="row items-center gap-sm">
+            </div>
+            <div class="edu-info">
+              <div class="edu-title-line">
                 <h3 class="institution-name q-my-none">
                   {{ edu.institution }}
                 </h3>
@@ -52,19 +58,19 @@
             </div>
           </div>
 
-          <div class="right-badges">
+          <div class="edu-meta-badges">
             <span v-if="edu.gpa" class="gpa-pill">
               <q-icon
                 name="fas fa-award"
-                size="13px"
+                size="14px"
                 class="q-mr-xs text-amber-4"
               />
               GPA: {{ edu.gpa }}
             </span>
-            <span class="period-badge q-ml-sm">
+            <span class="period-badge">
               <q-icon
                 name="fas fa-calendar"
-                size="12px"
+                size="13px"
                 class="q-mr-xs text-grey-4"
               />
               {{ edu.period }}
@@ -105,11 +111,24 @@
           </div>
         </div>
 
-        <!-- Carousel Photos if available -->
+        <!-- Campus Photos Showcase -->
         <div
           v-if="edu.imageSrcs && edu.imageSrcs.length"
-          class="campus-carousel-wrapper q-mt-md"
+          class="campus-gallery-container q-mt-lg"
         >
+          <div class="gallery-header flex items-center justify-between q-mb-sm">
+            <span class="gallery-label">
+              <q-icon
+                name="fas fa-camera"
+                size="13px"
+                class="q-mr-xs text-cyan-4"
+              />
+              Campus & Academic Environment
+            </span>
+            <span class="gallery-counter">
+              {{ edu.carouselModel + 1 }} / {{ edu.imageSrcs.length }}
+            </span>
+          </div>
           <q-carousel
             animated
             v-model="edu.carouselModel"
@@ -117,8 +136,7 @@
             navigation
             infinite
             swipeable
-            height="260px"
-            class="campus-carousel rounded-borders"
+            class="campus-carousel"
           >
             <q-carousel-slide
               v-for="(src, imgIdx) in edu.imageSrcs"
@@ -170,10 +188,48 @@ const educations = ref(
 .education-card {
   border-radius: 24px;
 
-  .edu-avatar {
+  .edu-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .edu-identity {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 0;
+  }
+
+  .edu-logo-box {
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
     background: rgba(15, 23, 42, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+
+    .edu-logo-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  .edu-title-line {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   .institution-name {
@@ -181,6 +237,7 @@ const educations = ref(
     font-weight: 700;
     color: #ffffff;
     font-family: "Outfit", sans-serif;
+    line-height: 1.3;
   }
 
   .degree-title {
@@ -191,8 +248,9 @@ const educations = ref(
   .status-pill {
     font-size: 0.74rem;
     font-weight: 600;
-    padding: 2px 8px;
+    padding: 2px 10px;
     border-radius: 9999px;
+    white-space: nowrap;
 
     &.pill-teal {
       background: rgba(20, 184, 166, 0.15);
@@ -211,6 +269,13 @@ const educations = ref(
     }
   }
 
+  .edu-meta-badges {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
   .gpa-pill {
     display: inline-flex;
     align-items: center;
@@ -219,7 +284,7 @@ const educations = ref(
     border: 1px solid rgba(245, 158, 11, 0.3);
     font-size: 0.82rem;
     font-weight: 700;
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 8px;
   }
 
@@ -230,7 +295,7 @@ const educations = ref(
     color: #cbd5e1;
     border: 1px solid rgba(255, 255, 255, 0.08);
     font-size: 0.8rem;
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 8px;
   }
 
@@ -265,13 +330,72 @@ const educations = ref(
     }
   }
 
-  .campus-carousel-wrapper {
-    border-radius: 16px;
-    overflow: hidden;
+  .campus-gallery-container {
+    background: rgba(10, 15, 29, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 12px;
+
+    .gallery-header {
+      padding: 0 4px 8px;
+
+      .gallery-label {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #94a3b8;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .gallery-counter {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        color: #818cf8;
+        background: rgba(99, 102, 241, 0.12);
+        border: 1px solid rgba(99, 102, 241, 0.25);
+        padding: 2px 10px;
+        border-radius: 6px;
+      }
+    }
 
     .campus-carousel {
-      background: #0d1322;
+      height: 380px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #090d16;
+
+      @media (max-width: 600px) {
+        height: 240px;
+      }
+
+      :deep(.q-carousel__slide) {
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+
+      :deep(.q-carousel__arrow .q-btn) {
+        background: rgba(15, 23, 42, 0.75);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #ffffff;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: rgba(99, 102, 241, 0.85);
+          border-color: rgba(99, 102, 241, 0.6);
+        }
+      }
+
+      :deep(.q-carousel__navigation-inner .q-btn) {
+        opacity: 0.5;
+        transition: opacity 0.2s ease;
+
+        &.q-btn--active {
+          opacity: 1;
+          color: #818cf8 !important;
+        }
+      }
     }
   }
 
