@@ -86,7 +86,10 @@
             flat
             class="social-btn"
             icon="fab fa-github"
-            @click="goToUrl(socialLinks.github.url)"
+            type="a"
+            :href="socialLinks.github.url"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <q-tooltip class="nav-tooltip">GitHub</q-tooltip>
           </q-btn>
@@ -97,7 +100,10 @@
             flat
             class="social-btn"
             icon="fab fa-linkedin-in"
-            @click="goToUrl(socialLinks.linkedin.url)"
+            type="a"
+            :href="socialLinks.linkedin.url"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <q-tooltip class="nav-tooltip">LinkedIn</q-tooltip>
           </q-btn>
@@ -108,9 +114,12 @@
             flat
             class="social-btn"
             icon="fab fa-telegram"
-            @click="goToUrl(socialLinks.telegram.url)"
+            type="a"
+            :href="socialLinks.telegram.url"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <q-tooltip class="nav-tooltip">Telegram</q-tooltip>
+            <q-tooltip class="nav-tooltip">Telegram (@itsha3an)</q-tooltip>
           </q-btn>
 
           <q-btn
@@ -118,7 +127,10 @@
             class="resume-cta-btn"
             icon="fas fa-file-arrow-down"
             label="Resume"
-            @click="goToUrl(socialLinks.resume.url)"
+            type="a"
+            :href="socialLinks.resume.url"
+            target="_blank"
+            rel="noopener noreferrer"
           />
         </div>
 
@@ -240,13 +252,52 @@
           </q-item>
         </q-list>
 
-        <div class="q-mt-xl">
+        <div class="row items-center justify-center gap-md q-mt-xl">
+          <q-btn
+            round
+            dense
+            flat
+            class="social-btn"
+            icon="fab fa-github"
+            type="a"
+            :href="socialLinks.github.url"
+            target="_blank"
+            rel="noopener noreferrer"
+          />
+          <q-btn
+            round
+            dense
+            flat
+            class="social-btn"
+            icon="fab fa-linkedin-in"
+            type="a"
+            :href="socialLinks.linkedin.url"
+            target="_blank"
+            rel="noopener noreferrer"
+          />
+          <q-btn
+            round
+            dense
+            flat
+            class="social-btn"
+            icon="fab fa-telegram"
+            type="a"
+            :href="socialLinks.telegram.url"
+            target="_blank"
+            rel="noopener noreferrer"
+          />
+        </div>
+
+        <div class="q-mt-lg">
           <q-btn
             unelevated
             class="full-width resume-cta-btn"
             icon="fas fa-file-arrow-down"
             label="Download Resume (PDF)"
-            @click="goToUrl(socialLinks.resume.url)"
+            type="a"
+            :href="socialLinks.resume.url"
+            target="_blank"
+            rel="noopener noreferrer"
           />
         </div>
       </div>
