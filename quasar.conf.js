@@ -27,18 +27,7 @@ module.exports = configure(function (ctx) {
     css: ["app.scss"],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
-    extras: [
-      // 'ionicons-v4',
-      'mdi-v5',
-      'fontawesome-v5',
-      'fontawesome-v6',
-      // 'eva-icons',
-      // 'themify',
-      // 'line-awesome',
-      // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
-      "roboto-font", // optional, you are not bound to it
-      "material-icons", // optional, you are not bound to it
-    ],
+    extras: ["fontawesome-v6", "roboto-font", "material-icons"],
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
@@ -83,7 +72,7 @@ module.exports = configure(function (ctx) {
     framework: {
       config: {},
 
-      iconSet: 'fontawesome-v6',// Quasar icon set
+      iconSet: "fontawesome-v6", // Quasar icon set
       // lang: 'en-US', // Quasar language pack
 
       // For special cases outside of where the auto-import strategy can have an impact
@@ -97,7 +86,7 @@ module.exports = configure(function (ctx) {
       plugins: [],
     },
 
-    animations: 'all', // --- includes all animations
+    animations: "all", // --- includes all animations
     // https://quasar.dev/options/animations
     // animations: [],
 
@@ -204,4 +193,3 @@ module.exports = configure(function (ctx) {
     },
   };
 });
-
