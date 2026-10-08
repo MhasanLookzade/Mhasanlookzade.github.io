@@ -7,6 +7,11 @@ export const educationData = [
     statusColor: "teal",
     location: "Tehran, Iran",
     url: "https://sbu.ac.ir/en",
+    svg: require("assets/Beheshti/sbu_logo.svg"),
+    imageSrcs: [
+      require("assets/Beheshti/sbu_faculty.jpg"),
+      require("assets/Beheshti/sbu_campus.jpg"),
+    ],
     description:
       "Advanced graduate study focusing on large-scale data processing, statistical modeling, machine learning, and data engineering pipelines.",
     topCourses: [
