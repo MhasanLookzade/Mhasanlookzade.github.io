@@ -83,23 +83,6 @@ export const skillsData = [
     ],
   },
   {
-    category: "Front-End Development",
-    icon: "fab fa-vuejs",
-    color: "emerald",
-    description:
-      "Reactive component frameworks, state management, and modern CSS",
-    skills: [
-      "JavaScript (ES6+)",
-      "Vue.js 3",
-      "Quasar Framework",
-      "Vuetify",
-      "Nuxt.js",
-      "HTML5 & Semantic Web",
-      "CSS3 & SCSS",
-      "Responsive Layouts",
-    ],
-  },
-  {
     category: "Automation & Scripting",
     icon: "fas fa-robot",
     color: "amber",
@@ -110,6 +93,25 @@ export const skillsData = [
       "PyAutoGUI GUI Automation",
       "Service Provisioning",
       "Monitoring & Troubleshooting",
+    ],
+  },
+  {
+    category: "Front-End Development",
+    icon: "fab fa-vuejs",
+    color: "emerald",
+    description:
+      "Reactive component frameworks, state management, and modern CSS",
+    skills: [
+      "JavaScript (ES6+)",
+      "Vue.js 3",
+      "Quasar Framework",
+      "React.js",
+      "Next.js",
+      "Vuetify",
+      "Nuxt.js",
+      "HTML5 & Semantic Web",
+      "CSS3 & SCSS",
+      "Responsive Layouts",
     ],
   },
 ];

@@ -1,10 +1,10 @@
 export const profileData = {
   fullName: "Mohammad Hasan",
   lastName: "Lookzadeh",
-  title: "DevOps Engineer & Full-Stack / IoT Developer",
+  title: "DevOps & Infrastructure Engineer",
   statusBadge: "DevOps Engineer @ Sharif Hamrah Pajoohan",
   summary:
-    "DevOps and Infrastructure Engineer with robust experience architecting automated CI/CD pipelines, container orchestration with Docker, Linux administration, and enterprise self-hosted platforms (Nexus, Jenkins, GitLab, HashiCorp Vault, SonarQube, MinIO). Skilled in IoT edge computing (Raspberry Pi), modern front-end architectures (Vue.js, Quasar, Nuxt, Vuetify), and backend systems (C#, .NET, Python, SQL). B.Sc. in Computer Science from Kharazmi University and currently pursuing M.Sc. in Data Analysis at Shahid Beheshti University.",
+    "DevOps and Infrastructure Engineer specializing in automated CI/CD pipelines, container orchestration with Docker, Linux server administration, and enterprise self-hosted platforms (Nexus, Jenkins, GitLab, HashiCorp Vault, SonarQube, MinIO). Experienced with edge IoT automation (Raspberry Pi), server-side backend systems (.NET, C#, Python, SQL), and modern reactive front-end architectures (Vue.js, React). Focused on scalable cloud infrastructure, site reliability, and DevOps engineering.",
   location: "Iran, Tehran, Sattarkhan",
   email: "hassan.lookzade@gmail.com",
   phone: "+989363109356",
@@ -22,9 +22,10 @@ export const profileData = {
     { label: "#DevOps", color: "cyan-4", icon: "fas fa-terminal" },
     { label: "#Docker & CI/CD", color: "blue-4", icon: "fab fa-docker" },
     { label: "#Linux Server", color: "green-4", icon: "fab fa-linux" },
-    { label: "#Vue.js & Quasar", color: "teal-4", icon: "fab fa-vuejs" },
+    { label: "#Cloud & Infrastructure", color: "indigo-4", icon: "fas fa-server" },
     { label: "#IoT & Automation", color: "amber-4", icon: "fas fa-microchip" },
-    { label: "#Full-Stack", color: "purple-4", icon: "fas fa-layer-group" },
+    { label: "#Backend & SQL", color: "purple-4", icon: "fas fa-database" },
+    { label: "#Front-End (Vue / React)", color: "teal-4", icon: "fab fa-vuejs" },
   ],
 
   socialLinks: {
