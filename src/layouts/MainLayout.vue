@@ -14,7 +14,7 @@
             <div class="brand-name">M. Hasan Lookzadeh</div>
             <div class="brand-subtitle">
               <span class="live-dot"></span>
-              DevOps & Infrastructure
+              DevOps & Full-Stack
             </div>
           </div>
         </router-link>

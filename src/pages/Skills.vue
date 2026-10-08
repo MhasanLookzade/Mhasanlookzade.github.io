@@ -95,9 +95,8 @@ const filterOptions = [
   { label: "All Skills", value: "all", icon: "fas fa-border-all" },
   { label: "DevOps & Cloud", value: "devops", icon: "fas fa-infinity" },
   { label: "Linux & Network", value: "linux", icon: "fab fa-linux" },
-  { label: "Backend & DB", value: "backend", icon: "fas fa-database" },
-  { label: "Front-End", value: "frontend", icon: "fab fa-vuejs" },
   { label: "Automation", value: "automation", icon: "fas fa-robot" },
+  { label: "Front-End", value: "frontend", icon: "fab fa-vuejs" },
 ];
 
 const filteredCategories = computed(() => {
