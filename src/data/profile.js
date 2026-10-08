@@ -30,7 +30,7 @@ export const profileData = {
   socialLinks: {
     linkedin: {
       icon: "fab fa-linkedin-in",
-      url: "https://www.linkedin.com/in/hasan-lookzadeh-0b0602232/",
+      url: "https://www.linkedin.com/in/m-hasan-lookzadeh-0b0602232/",
       tooltip: "LinkedIn Profile",
     },
     github: {

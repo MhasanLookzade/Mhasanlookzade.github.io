@@ -8,7 +8,7 @@ export const contactData = {
   },
   linkedin: {
     handle: "Hasan Lookzadeh",
-    url: "https://www.linkedin.com/in/hasan-lookzadeh-0b0602232/",
+    url: "https://www.linkedin.com/in/m-hasan-lookzadeh-0b0602232/",
   },
   github: {
     handle: "MhasanLookzade",
