@@ -1,35 +1,22 @@
 <template>
   <div class="row flex-center q-mx-auto">
-    <div class="col-7 ">
+    <div class="col-7">
       <div class="row about">
-        <h2 class="fullName">Mohammad Hasan <span class="lastname" >Lookzadeh</span></h2>
-        <h3 class="title">Maybe FullStack Developer</h3>
-        <h6 class="summary">
-          Talented and experienced front-end developer executing with a A wealth of diverse skills.
-          Experience has taught me to take accessibility and
-          responsiveness seriously, and I am excited to continue my career
-          at Thrive Web Designs with a focus on making sites with Vue.js (Quasar Framework) </h6>
+        <h2 class="fullName">
+          {{ profile.fullName }}
+          <span class="lastname">{{ profile.lastName }}</span>
+        </h2>
+        <h3 class="title">{{ profile.title }}</h3>
+        <h6 class="summary">{{ profile.summary }}</h6>
         <div class="chips">
-          <q-icon
-            size="40px"
-            name="person"
+          <q-icon size="40px" name="person" />
+          <q-chip
+            v-for="(chip, index) in profile.chips"
+            :key="index"
+            :color="chip.color"
+            :text-color="chip.textColor"
+            :label="chip.label"
           />
-          <q-chip
-            color="orange"
-            text-color="purple"
-            label="#Concentrated"></q-chip>
-          <q-chip
-            color="orange"
-            text-color="purple"
-            label="#motivated"></q-chip>
-          <q-chip
-            color="orange"
-            text-color="purple"
-            label="#communicative"></q-chip>
-          <q-chip
-            color="orange"
-            text-color="purple"
-            label="#hard-working"></q-chip>
         </div>
       </div>
     </div>
@@ -39,32 +26,22 @@
         spinner-color="midnightblue"
         alt="HasanLogo"
         src="~assets/hajHassan/hajhasan.png"
-        style="width: 300px; height: 300px;border-radius: 50%"
+        class="profile-image"
       />
-
     </div>
-
   </div>
 </template>
 
-<script>
-import {defineComponent} from "vue";
-
-export default defineComponent({
-  name: "PageIndex",
-  created() {
-  },
-
-})
-
+<script setup>
+import { profileData as profile } from "src/data/profile";
 </script>
 
 <style lang="scss" scoped>
-.about{
+.about {
   display: flex;
   justify-content: center;
-  .fullName{
-    .lastname{
+  .fullName {
+    .lastname {
       color: purple;
       margin-left: 20px;
     }
@@ -74,16 +51,15 @@ export default defineComponent({
     color: midnightblue;
     font-family: cursive;
   }
-  .title{
+  .title {
     color: midnightblue;
     font-family: cursive;
   }
-  .summary{
-
-  }
-  .chips{}
-
-
 }
 
+.profile-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
 </style>
