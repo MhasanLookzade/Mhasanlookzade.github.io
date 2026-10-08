@@ -1,127 +1,259 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header class="headerLayout" elevated>
-      <div class="row header">
-        <div class="col-4 links">
-          <q-icon
-            class="link"
-            size="40px"
-            :name="socialLinks.linkedin.icon"
-            @click="goToUrl(socialLinks.linkedin.url)"
-          >
-            <q-tooltip class="bg-orange text-body2" :offset="[10, 10]">
-              {{ socialLinks.linkedin.tooltip }}
-            </q-tooltip>
-          </q-icon>
+  <q-layout view="lHh Lpr lFf" class="main-layout">
+    <q-header elevated class="header-nav">
+      <q-toolbar class="toolbar-container">
+        <!-- Brand identity -->
+        <router-link to="/about" class="brand-link">
+          <q-avatar size="44px" class="brand-avatar">
+            <img
+              src="~assets/hajHassan/hajhasan.png"
+              alt="Mohammad Hasan Lookzadeh"
+            />
+          </q-avatar>
+          <div class="brand-text">
+            <div class="brand-name">M. Hasan Lookzadeh</div>
+            <div class="brand-subtitle">
+              <span class="live-dot"></span>
+              DevOps & Full-Stack
+            </div>
+          </div>
+        </router-link>
 
-          <q-icon
-            class="link"
-            size="40px"
-            :name="socialLinks.instagram.icon"
-            @click="goToUrl(socialLinks.instagram.url)"
-          >
-            <q-tooltip class="bg-orange text-body2" :offset="[10, 10]">
-              {{ socialLinks.instagram.tooltip }}
-            </q-tooltip>
-          </q-icon>
+        <q-space />
 
-          <q-icon
-            class="link"
-            size="40px"
-            :name="socialLinks.github.icon"
-            @click="goToUrl(socialLinks.github.url)"
+        <!-- Desktop Navigation Tabs -->
+        <div class="desktop-nav gt-sm">
+          <q-tabs
+            v-model="tab"
+            no-caps
+            dense
+            active-color="primary"
+            indicator-color="transparent"
+            class="nav-tabs"
           >
-            <q-tooltip class="bg-orange text-body2" :offset="[10, 10]">
-              {{ socialLinks.github.tooltip }}
-            </q-tooltip>
-          </q-icon>
-
-          <q-icon
-            class="link"
-            size="40px"
-            @click="goToUrl(socialLinks.resume.url)"
-          >
-            <template v-slot:default>
-              <q-tooltip class="bg-orange text-body2" :offset="[10, 10]">
-                {{ socialLinks.resume.tooltip }}
-              </q-tooltip>
-              <svg
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 1000 1000"
-              >
-                <g>
-                  <g
-                    transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-                  >
-                    <path
-                      d="M1719.3,4993.2c-170.4-61.3-302.5-193.4-367.6-361.8c-26.8-72.8-28.7-518.8-24.9-4550.8l5.7-4470.4l51.7-88c67-114.9,199.1-233.6,304.4-273.8c78.5-28.7,329.3-30.6,3338.9-26.8c3097.7,5.7,3258.5,7.7,3317.9,40.2c113,61.3,220.2,174.2,275.7,291l53.6,114.9v3783.1c0,3390.6-3.8,3792.7-30.6,3876.9c-26.8,84.2-101.5,164.6-788.8,848.1c-583.9,578.2-783,763.9-855.8,798.4l-95.7,45.9l-2555.9-1.9C2247.7,5018.1,1778.6,5014.3,1719.3,4993.2z M6626.2,3890.4c0-802.2,3.8-832.8,113-888.3c49.8-26.8,162.7-30.6,796.4-30.6h737.1V-662.3c0-3237.5-3.8-3639.5-30.6-3675.9l-28.7-42.1H4998.8c-2896.7,0-3216.4,3.8-3243.2,30.6c-26.8,26.8-30.6,457.6-30.6,4457c0,4621.7-1.9,4468.5,76.6,4497.2c15.3,5.7,1108.5,11.5,2427.6,11.5l2397,1.9V3890.4z M7564.3,3894.3c273.8-268,497.8-494,497.8-503.5c0-11.5-202.9-15.3-511.2-13.4l-513.1,5.7l-5.7,503.5c-1.9,331.2,1.9,503.5,15.3,497.8C7056.9,4382.5,7290.5,4160.4,7564.3,3894.3z"
-                    />
-                    <path
-                      d="M4462.8,1300.1c-530.3-180-830.9-783-650.9-1303.8c53.6-157,122.5-269.9,245.1-398.2c197.2-206.8,405.9-302.5,664.3-302.5c247,0,522.7,120.6,675.8,294.8c107.2,124.4,68.9,287.2-80.4,336.9c-80.4,26.8-151.3,1.9-241.2-86.1C4826.5-400,4391.9-327.3,4234.9-17.1c-86.2,166.6-95.7,405.9-28.7,605c47.9,135.9,199.1,283.3,333.1,323.5c206.8,61.3,371.4,26.8,534.1-112.9c70.8-61.3,118.7-86.2,157-86.2c124.4,0,206.8,82.3,208.7,206.8c0,99.6-67,180-239.3,281.4C4954.8,1346,4698.3,1380.5,4462.8,1300.1z"
-                    />
-                    <path
-                      d="M5799.1,1248.4c-59.3-45.9-99.6-137.8-86.2-193.4c5.8-21.1,158.9-405.9,342.7-853.9c202.9-499.7,348.4-830.9,377.2-859.6c59.3-59.4,185.7-63.2,256.5-7.7c36.4,28.7,130.2,245.1,386.7,884.5c371.4,928.5,369.5,924.7,256.6,1018.5c-68.9,59.3-155.1,65.1-237.4,15.3c-49.8-30.6-86.2-107.2-285.3-608.8c-124.4-314-233.6-578.2-239.3-585.8C6563,48,6450,306.4,6319.8,628.1c-208.7,516.9-243.1,591.6-294.8,622.2C5948.4,1296.3,5858.5,1296.3,5799.1,1248.4z"
-                    />
-                    <path
-                      d="M2728.2-1527.7c-126.4-51.7-162.7-229.7-67-327.4l55.5-55.5h2280.2h2280.2l59.3,53.6c49.8,44,61.3,68.9,61.3,130.2c0,95.7-47.9,170.4-124.4,197.2C7200.5-1504.7,2789.5-1502.8,2728.2-1527.7z"
-                    />
-                    <path
-                      d="M2670.8-2818.1c-93.8-93.8-86.1-218.2,19.1-302.5c38.3-30.6,187.6-34.5,2310.8-34.5c2247.6,0,2272.5,0,2320.4,38.3c72.7,57.4,99.6,153.2,63.2,235.5c-55.5,137.8,105.3,128.3-2397,128.3H2735.9L2670.8-2818.1z"
-                    />
-                  </g>
-                </g>
-              </svg>
-            </template>
-          </q-icon>
-        </div>
-
-        <div class="col-8 tabs">
-          <q-tabs class="options" :breakpoint="0" v-model="tab" inline-label>
             <q-route-tab
-              label="About"
-              name="about"
-              icon="person"
               to="/about"
               exact
+              name="about"
+              label="About"
+              icon="fas fa-user"
             />
             <q-route-tab
-              name="education"
-              label="Education"
-              icon="school"
+              to="/experience"
+              exact
+              name="experience"
+              label="Experience"
+              icon="fas fa-briefcase"
+            />
+            <q-route-tab
+              to="/skills"
+              exact
+              name="skills"
+              label="Skills"
+              icon="fas fa-code"
+            />
+            <q-route-tab
               to="/education"
               exact
+              name="education"
+              label="Education"
+              icon="fas fa-graduation-cap"
             />
             <q-route-tab
-              icon="fas fa-scroll"
-              to="/experience"
-              label="Experience"
-              exact
-            />
-            <q-route-tab
-              icon="fas fa-spinner"
-              to="/skills"
-              label="Skills"
-              exact
-            />
-            <q-route-tab
-              icon="add_to_queue"
               to="/courses"
-              label="courses"
               exact
+              name="courses"
+              label="Courses"
+              icon="fas fa-certificate"
             />
             <q-route-tab
-              icon="mail"
               to="/contact_me"
-              label="Contact Me"
               exact
+              name="contact"
+              label="Contact"
+              icon="fas fa-paper-plane"
             />
           </q-tabs>
         </div>
-      </div>
+
+        <q-space />
+
+        <!-- Social & Quick Action Buttons -->
+        <div class="action-buttons gt-xs">
+          <q-btn
+            round
+            dense
+            flat
+            class="social-btn"
+            icon="fab fa-github"
+            @click="goToUrl(socialLinks.github.url)"
+          >
+            <q-tooltip class="nav-tooltip">GitHub</q-tooltip>
+          </q-btn>
+
+          <q-btn
+            round
+            dense
+            flat
+            class="social-btn"
+            icon="fab fa-linkedin-in"
+            @click="goToUrl(socialLinks.linkedin.url)"
+          >
+            <q-tooltip class="nav-tooltip">LinkedIn</q-tooltip>
+          </q-btn>
+
+          <q-btn
+            round
+            dense
+            flat
+            class="social-btn"
+            icon="fab fa-telegram"
+            @click="goToUrl(socialLinks.telegram.url)"
+          >
+            <q-tooltip class="nav-tooltip">Telegram</q-tooltip>
+          </q-btn>
+
+          <q-btn
+            unelevated
+            class="resume-cta-btn"
+            icon="fas fa-file-arrow-down"
+            label="Resume"
+            @click="goToUrl(socialLinks.resume.url)"
+          />
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <q-btn
+          flat
+          dense
+          round
+          icon="fas fa-bars"
+          class="lt-md q-ml-sm mobile-menu-btn"
+          @click="drawerOpen = !drawerOpen"
+        />
+      </q-toolbar>
     </q-header>
 
-    <q-page-container class="homePageContainer">
+    <!-- Mobile Drawer Navigation -->
+    <q-drawer
+      v-model="drawerOpen"
+      side="right"
+      overlay
+      behavior="mobile"
+      class="mobile-drawer"
+    >
+      <div class="drawer-content q-pa-lg">
+        <div class="row items-center justify-between q-mb-lg">
+          <div class="text-h6 text-weight-bold text-white">Menu</div>
+          <q-btn
+            flat
+            round
+            dense
+            icon="fas fa-xmark"
+            @click="drawerOpen = false"
+          />
+        </div>
+
+        <q-list class="mobile-nav-list">
+          <q-item
+            clickable
+            v-ripple
+            to="/about"
+            exact
+            @click="drawerOpen = false"
+            active-class="mobile-active"
+          >
+            <q-item-section avatar
+              ><q-icon name="fas fa-user"
+            /></q-item-section>
+            <q-item-section>About Me</q-item-section>
+          </q-item>
+
+          <q-item
+            clickable
+            v-ripple
+            to="/experience"
+            exact
+            @click="drawerOpen = false"
+            active-class="mobile-active"
+          >
+            <q-item-section avatar
+              ><q-icon name="fas fa-briefcase"
+            /></q-item-section>
+            <q-item-section>Experience</q-item-section>
+          </q-item>
+
+          <q-item
+            clickable
+            v-ripple
+            to="/skills"
+            exact
+            @click="drawerOpen = false"
+            active-class="mobile-active"
+          >
+            <q-item-section avatar
+              ><q-icon name="fas fa-code"
+            /></q-item-section>
+            <q-item-section>Skills</q-item-section>
+          </q-item>
+
+          <q-item
+            clickable
+            v-ripple
+            to="/education"
+            exact
+            @click="drawerOpen = false"
+            active-class="mobile-active"
+          >
+            <q-item-section avatar
+              ><q-icon name="fas fa-graduation-cap"
+            /></q-item-section>
+            <q-item-section>Education</q-item-section>
+          </q-item>
+
+          <q-item
+            clickable
+            v-ripple
+            to="/courses"
+            exact
+            @click="drawerOpen = false"
+            active-class="mobile-active"
+          >
+            <q-item-section avatar
+              ><q-icon name="fas fa-certificate"
+            /></q-item-section>
+            <q-item-section>Courses & Languages</q-item-section>
+          </q-item>
+
+          <q-item
+            clickable
+            v-ripple
+            to="/contact_me"
+            exact
+            @click="drawerOpen = false"
+            active-class="mobile-active"
+          >
+            <q-item-section avatar
+              ><q-icon name="fas fa-paper-plane"
+            /></q-item-section>
+            <q-item-section>Contact</q-item-section>
+          </q-item>
+        </q-list>
+
+        <div class="q-mt-xl">
+          <q-btn
+            unelevated
+            class="full-width resume-cta-btn"
+            icon="fas fa-file-arrow-down"
+            label="Download Resume (PDF)"
+            @click="goToUrl(socialLinks.resume.url)"
+          />
+        </div>
+      </div>
+    </q-drawer>
+
+    <!-- Main Content Container with Ambient Glow -->
+    <q-page-container class="page-container-glow">
       <router-view />
     </q-page-container>
   </q-layout>
@@ -132,48 +264,195 @@ import { ref } from "vue";
 import { profileData } from "src/data/profile";
 
 const tab = ref("about");
+const drawerOpen = ref(false);
 const socialLinks = profileData.socialLinks;
 
 const goToUrl = (url) => {
-  window.open(url, "_blank");
+  if (url) {
+    window.open(url, "_blank");
+  }
 };
 </script>
 
 <style lang="scss">
-.headerLayout {
-  .header {
-    height: 88px;
+.main-layout {
+  background-color: #090d16;
+}
 
-    .links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+.header-nav {
+  background: rgba(9, 13, 22, 0.82) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  height: 72px;
+  display: flex;
+  justify-content: center;
 
-      .link {
-        margin-left: 4px;
-        cursor: pointer;
-      }
+  .toolbar-container {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+  }
+
+  .brand-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    gap: 12px;
+
+    .brand-avatar {
+      border: 2px solid rgba(99, 102, 241, 0.4);
+      box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
     }
 
-    .tabs {
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-end;
+    .brand-text {
+      .brand-name {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: #ffffff;
+        letter-spacing: -0.01em;
+      }
+      .brand-subtitle {
+        font-size: 0.76rem;
+        color: #94a3b8;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        .live-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: #10b981;
+          box-shadow: 0 0 8px #10b981;
+        }
+      }
     }
   }
 
-  color: orange;
-  background-color: #b249c4;
+  .nav-tabs {
+    .q-tab {
+      margin: 0 3px;
+      border-radius: 12px;
+      min-height: 40px;
+      padding: 0 14px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: #94a3b8;
+      transition: all 0.25s ease;
+
+      .q-icon {
+        font-size: 0.95rem;
+        margin-right: 6px;
+      }
+
+      &:hover {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      &.q-router-link--exact-active {
+        color: #ffffff;
+        background: rgba(99, 102, 241, 0.16);
+        border: 1px solid rgba(99, 102, 241, 0.35);
+        box-shadow: 0 4px 16px rgba(99, 102, 241, 0.2);
+      }
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .social-btn {
+      color: #94a3b8;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      width: 38px;
+      height: 38px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: #ffffff;
+        background: rgba(99, 102, 241, 0.18);
+        border-color: rgba(99, 102, 241, 0.4);
+        transform: translateY(-2px);
+      }
+    }
+
+    .resume-cta-btn {
+      background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.86rem;
+      border-radius: 10px;
+      padding: 0 16px;
+      height: 38px;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+      transition: all 0.25s ease;
+
+      &:hover {
+        box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  .mobile-menu-btn {
+    color: #ffffff;
+  }
 }
 
-.homePageContainer {
-  height: 100vh;
-  background-image: url("https://wallpapercave.com/uwp/uwp1314748.gif");
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  background-size: cover;
-  overflow: auto;
+.mobile-drawer {
+  background: #0d1322 !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+
+  .mobile-nav-list {
+    .q-item {
+      border-radius: 12px;
+      margin-bottom: 6px;
+      color: #94a3b8;
+      font-weight: 500;
+
+      &.mobile-active {
+        color: #ffffff;
+        background: rgba(99, 102, 241, 0.16);
+        border: 1px solid rgba(99, 102, 241, 0.3);
+      }
+    }
+  }
+}
+
+.page-container-glow {
+  min-height: 100vh;
+  background: radial-gradient(
+      circle at 10% 20%,
+      rgba(99, 102, 241, 0.08) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 90% 30%,
+      rgba(6, 182, 212, 0.08) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(16, 185, 129, 0.05) 0%,
+      transparent 50%
+    ),
+    #090d16;
+  padding: 24px 16px 60px;
+}
+
+.nav-tooltip {
+  background: #1e293b;
+  color: #f8fafc;
+  font-size: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 </style>
