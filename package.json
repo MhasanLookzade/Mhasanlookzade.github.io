@@ -6,14 +6,16 @@
   "author": "hasan <hassan.lookzade@gmail.com>",
   "private": false,
   "scripts": {
+    "dev": "quasar dev",
+    "build": "quasar build",
     "lint": "eslint --ext .js,.vue ./",
-    "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .gitignore",
+    "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\"",
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
     "@quasar/extras": "^1.15.3",
     "core-js": "^3.6.5",
-    "quasar": "^2.0.0",
+    "quasar": "^2.7.7",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0"
   },
