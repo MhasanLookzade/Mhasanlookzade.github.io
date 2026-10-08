@@ -1,68 +1,65 @@
 <template>
-    <div class="contactME">
-      <q-card class="contactCardContainer  bg-orange-4">
-        <q-card-section class="contactCard">
-          <div class="details ">
-            <ul class="q-pl-md q-pr-sm text-bold" style="font-size: 18px;color: purple">
-              <li>
-                <i class="fas fa-envelope-open mr-2 q-mr-sm"></i>
-                <a href="mailto:hassan.lookzade@gmail.com">hassan.lookzade@gmail.com</a>
-              </li>
-              <li>
-                <i class="fas fa-mobile-alt mr-2 q-mr-sm">&nbsp;
-                </i>
-                <a href="tel:+989363109356">+989363109356</a>
-              </li>
-              <li><i class="fa-brands fa-telegram q-mr-sm"></i>
-                <a href="https://t.me/itsha3an" target="_blank">Itsha3an</a>
-              </li>
-
-              <li><i class="fas fa-map-marker-alt mr-2 q-mr-sm"></i> <span class="text-blue-9">Iran,Tehran</span> </li>
-
-            </ul>
-          </div>
-
-        </q-card-section>
-        <q-card-section>
-          <div class="googleMapContainer"
+  <div class="contactME">
+    <q-card class="contactCardContainer bg-orange-4">
+      <q-card-section class="contactCard">
+        <div class="details">
+          <ul
+            class="q-pl-md q-pr-sm text-bold"
+            style="font-size: 18px; color: purple"
           >
+            <li>
+              <i class="fas fa-envelope-open mr-2 q-mr-sm"></i>
+              <a :href="`mailto:${contact.email}`">{{ contact.email }}</a>
+            </li>
+            <li>
+              <i class="fas fa-mobile-alt mr-2 q-mr-sm"></i>
+              <a :href="`tel:${contact.phone}`">{{ contact.phone }}</a>
+            </li>
+            <li>
+              <i class="fa-brands fa-telegram q-mr-sm"></i>
+              <a :href="contact.telegram.url" target="_blank">{{
+                contact.telegram.handle
+              }}</a>
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt mr-2 q-mr-sm"></i>
+              <span class="text-blue-9">{{ contact.location }}</span>
+            </li>
+          </ul>
+        </div>
+      </q-card-section>
 
-            <q-inner-loading
-              style="border-radius: 45px"
-              :showing="visible"
-              label="Please wait..."
-              label-class="text-teal"
-              label-style="font-size: 1.1em"
-            />
-            <iframe
-              @load="showMapLoading"
-              class="google"
-              src="https://maps.google.com/maps?q=tehran&t=&z=13&ie=UTF8&iwloc=&output=embed"
-              frameborder="0"
-              allowfullscreen
-            />
-          </div>
-
-        </q-card-section>
-      </q-card>
-
-    </div>
+      <q-card-section>
+        <div class="googleMapContainer">
+          <q-inner-loading
+            style="border-radius: 45px"
+            :showing="mapLoading"
+            label="Please wait..."
+            label-class="text-teal"
+            label-style="font-size: 1.1em"
+          />
+          <iframe
+            @load="onMapLoaded"
+            class="google"
+            :src="contact.mapUrl"
+            frameborder="0"
+            allowfullscreen
+          />
+        </div>
+      </q-card-section>
+    </q-card>
+  </div>
 </template>
 
-<script>
-export default {
-  name: "Contact",
-  data(){
-    return{
-      visible:true,
-    }
-  },
-  methods:{
-    showMapLoading () {
-      this.visible = false
-    }
-  }
-}
+<script setup>
+import { ref } from "vue";
+import { contactData as contact } from "src/data/contact";
+
+const mapLoading = ref(true);
+
+const onMapLoaded = () => {
+  mapLoading.value = false;
+};
 </script>
 
 <style scoped lang="scss">
@@ -71,12 +68,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  .contactCardContainer{
+  .contactCardContainer {
     width: 50%;
     border-radius: 45px;
-    .contactCard  {
+    .contactCard {
       padding: 0;
-      .details{
+      .details {
         display: grid;
         justify-content: center;
       }
@@ -92,8 +89,5 @@ export default {
       width: 80%;
     }
   }
-
 }
-
-
 </style>
