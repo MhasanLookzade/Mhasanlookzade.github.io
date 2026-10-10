@@ -9,11 +9,12 @@ export const experienceData = [
     description:
       "Core infrastructure and DevOps engineering responsible for deploying and managing self-hosted Linux services, automated CI/CD pipelines, and multi-service orchestration.",
     highlights: [
-      "Deployed and maintained production self-hosted infrastructure services including Nexus Repository, Jenkins, Docker, GitLab (CLI), HashiCorp Vault, SonarQube, and MinIO on enterprise Linux servers.",
-      "Designed and implemented full end-to-end CI/CD pipelines using Jenkins and Nexus, utilizing MinIO as the scalable artifact and object storage backend.",
-      "Automated recurring operational workflows such as service provisioning, reverse proxy configs, and troubleshooting via Bash and Nginx.",
-      "Built, containerized, and deployed front-end and back-end applications using optimized Dockerfiles and Docker Compose on production Linux servers.",
-      "Contributed front-end features and bug fixes alongside infrastructure development.",
+      "Configured and maintained enterprise Nexus Repository Manager as a centralized caching proxy and private registry (npm, NuGet/.NET, APT, C++ Conan, and Docker registry), enabling offline/air-gapped build capability and optimized Docker base image delivery.",
+      "Designed and automated end-to-end CI/CD pipelines in Jenkins, incorporating automated test execution, build artifact archiving, and deployment workflows.",
+      "Engineered multi-stage Docker builds and orchestrated microservices with Docker Compose across production Linux environments.",
+      "Deployed and operated MinIO as high-performance, S3-compatible object storage for Jenkins build artifacts and shared pipeline storage.",
+      "Integrated HashiCorp Vault for centralized secret management and SonarQube quality gates for continuous static code analysis (SAST).",
+      "Automated server provisioning, Nginx reverse proxy routing, SSL certificates, and recurring maintenance routines via Bash scripts on Ubuntu Linux servers.",
     ],
     skills: [
       "Jenkins",
